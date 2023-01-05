@@ -56,9 +56,9 @@ app.get("/players/", async (request, response) => {
 app.post("/players/", async (request, response) => {
   const teamDetails = request.body;
 
-  const { player_id, player_name, jersey_number, role } = teamDetails;
+  const { playerName, jerseyNumber, role } = teamDetails;
 
-  const getQuery = `INSERT INTO cricket_team(player_name,jersey_number,role) VALUES ('${player_name}','${jersey_number}','${role}'); `;
+  const getQuery = `INSERT INTO cricket_team(player_name,jersey_number,role) VALUES ('${playerName}','${jerseyNumber}','${role}'); `;
 
   const data = await db.run(getQuery);
 
